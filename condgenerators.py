@@ -10,6 +10,7 @@ ngf = 64
 def snlinear(eps=1e-12, **kwargs):
     return nn.utils.spectral_norm(nn.Linear(**kwargs), eps=eps)
 
+# This function is based on https://github.com/Muzammal-Naseer/Cross-domain-perturbations
 def get_gaussian_kernel(kernel_size=3, pad=2, sigma=1, channels=3):
     # Create a x, y coordinate grid of shape (kernel_size, kernel_size, 2)
     x_coord = torch.arange(kernel_size)
